@@ -36,8 +36,8 @@ bool Texture::loadFromFile(std::string path) {
             printf("Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
         } else {
             // Get image dimensions
-            mWidth = SCREEN_WIDTH / 10; //loadedSurface->w;
-            mHeight = SCREEN_HEIGHT / 20; //loadedSurface->h;
+            mWidth = loadedSurface->w;
+            mHeight = loadedSurface->h;
         }
         // Get rid of the old loaded surface
         SDL_FreeSurface(loadedSurface);

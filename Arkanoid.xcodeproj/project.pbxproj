@@ -7,7 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E0DC71624A50AC900218FF6 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E0DC71524A50AC900218FF6 /* Ball.cpp */; };
+		0E0DC71A24A50C1400218FF6 /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E0DC71924A50C1300218FF6 /* Block.cpp */; };
+		0E0DC71E24A50D0D00218FF6 /* Bar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E0DC71D24A50D0D00218FF6 /* Bar.cpp */; };
 		0E34549E24A4B97500BD3767 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E34549D24A4B97500BD3767 /* main.cpp */; };
+		0E3454A924A4B9CE00BD3767 /* SDL2_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3454A524A4B9CE00BD3767 /* SDL2_mixer.framework */; };
+		0E3454AA24A4B9CE00BD3767 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3454A624A4B9CE00BD3767 /* SDL2_ttf.framework */; };
+		0E3454AB24A4B9CE00BD3767 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3454A724A4B9CE00BD3767 /* SDL2.framework */; };
+		0E3454AC24A4B9CE00BD3767 /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3454A824A4B9CE00BD3767 /* SDL2_image.framework */; };
+		0E3454B024A4BBB000BD3767 /* SDLConfig.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E3454AF24A4BBB000BD3767 /* SDLConfig.cpp */; };
+		0E3454B424A4BC6800BD3767 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E3454B324A4BC6800BD3767 /* Timer.cpp */; };
+		0E3454B824A4BCEA00BD3767 /* Common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E3454B724A4BCEA00BD3767 /* Common.cpp */; };
+		0E3454BC24A4BDCA00BD3767 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E3454BB24A4BDCA00BD3767 /* Texture.cpp */; };
+		0E3454C124A4C02A00BD3767 /* Controls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0E3454C024A4C02A00BD3767 /* Controls.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +35,28 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0E0DC71424A50A8500218FF6 /* Ball.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ball.h; sourceTree = "<group>"; };
+		0E0DC71524A50AC900218FF6 /* Ball.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
+		0E0DC71824A50B1700218FF6 /* Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
+		0E0DC71924A50C1300218FF6 /* Block.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Block.cpp; sourceTree = "<group>"; };
+		0E0DC71C24A50C6D00218FF6 /* Bar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bar.h; sourceTree = "<group>"; };
+		0E0DC71D24A50D0D00218FF6 /* Bar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bar.cpp; sourceTree = "<group>"; };
 		0E34549A24A4B97500BD3767 /* Arkanoid */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Arkanoid; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E34549D24A4B97500BD3767 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		0E3454A524A4B9CE00BD3767 /* SDL2_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_mixer.framework; path = ../../../../Library/Frameworks/SDL2_mixer.framework; sourceTree = "<group>"; };
+		0E3454A624A4B9CE00BD3767 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
+		0E3454A724A4B9CE00BD3767 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		0E3454A824A4B9CE00BD3767 /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		0E3454AE24A4BB9E00BD3767 /* SDLConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDLConfig.h; sourceTree = "<group>"; };
+		0E3454AF24A4BBB000BD3767 /* SDLConfig.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SDLConfig.cpp; sourceTree = "<group>"; };
+		0E3454B224A4BC5A00BD3767 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		0E3454B324A4BC6800BD3767 /* Timer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
+		0E3454B624A4BCDC00BD3767 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		0E3454B724A4BCEA00BD3767 /* Common.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Common.cpp; sourceTree = "<group>"; };
+		0E3454BA24A4BDB700BD3767 /* Texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		0E3454BB24A4BDCA00BD3767 /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		0E3454BF24A4C01A00BD3767 /* Controls.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Controls.h; sourceTree = "<group>"; };
+		0E3454C024A4C02A00BD3767 /* Controls.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Controls.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,17 +64,49 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3454A924A4B9CE00BD3767 /* SDL2_mixer.framework in Frameworks */,
+				0E3454AA24A4B9CE00BD3767 /* SDL2_ttf.framework in Frameworks */,
+				0E3454AB24A4B9CE00BD3767 /* SDL2.framework in Frameworks */,
+				0E3454AC24A4B9CE00BD3767 /* SDL2_image.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E0DC71324A50A5E00218FF6 /* Ball */ = {
+			isa = PBXGroup;
+			children = (
+				0E0DC71524A50AC900218FF6 /* Ball.cpp */,
+				0E0DC71424A50A8500218FF6 /* Ball.h */,
+			);
+			path = Ball;
+			sourceTree = "<group>";
+		};
+		0E0DC71724A50AF600218FF6 /* Block */ = {
+			isa = PBXGroup;
+			children = (
+				0E0DC71924A50C1300218FF6 /* Block.cpp */,
+				0E0DC71824A50B1700218FF6 /* Block.h */,
+			);
+			path = Block;
+			sourceTree = "<group>";
+		};
+		0E0DC71B24A50C5100218FF6 /* Bar */ = {
+			isa = PBXGroup;
+			children = (
+				0E0DC71D24A50D0D00218FF6 /* Bar.cpp */,
+				0E0DC71C24A50C6D00218FF6 /* Bar.h */,
+			);
+			path = Bar;
+			sourceTree = "<group>";
+		};
 		0E34549124A4B97500BD3767 = {
 			isa = PBXGroup;
 			children = (
 				0E34549C24A4B97500BD3767 /* Arkanoid */,
 				0E34549B24A4B97500BD3767 /* Products */,
+				0E3454A424A4B9CE00BD3767 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +122,72 @@
 			isa = PBXGroup;
 			children = (
 				0E34549D24A4B97500BD3767 /* main.cpp */,
+				0E3454AD24A4BB8A00BD3767 /* SDLConfig */,
+				0E3454BD24A4BFFD00BD3767 /* Controls */,
+				0E3454B924A4BD9E00BD3767 /* Texture */,
+				0E3454B124A4BC2D00BD3767 /* Timer */,
+				0E0DC71324A50A5E00218FF6 /* Ball */,
+				0E0DC71724A50AF600218FF6 /* Block */,
+				0E0DC71B24A50C5100218FF6 /* Bar */,
+				0E3454B524A4BCBA00BD3767 /* Common */,
 			);
 			path = Arkanoid;
+			sourceTree = "<group>";
+		};
+		0E3454A424A4B9CE00BD3767 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E3454A824A4B9CE00BD3767 /* SDL2_image.framework */,
+				0E3454A524A4B9CE00BD3767 /* SDL2_mixer.framework */,
+				0E3454A624A4B9CE00BD3767 /* SDL2_ttf.framework */,
+				0E3454A724A4B9CE00BD3767 /* SDL2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0E3454AD24A4BB8A00BD3767 /* SDLConfig */ = {
+			isa = PBXGroup;
+			children = (
+				0E3454AF24A4BBB000BD3767 /* SDLConfig.cpp */,
+				0E3454AE24A4BB9E00BD3767 /* SDLConfig.h */,
+			);
+			path = SDLConfig;
+			sourceTree = "<group>";
+		};
+		0E3454B124A4BC2D00BD3767 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				0E3454B324A4BC6800BD3767 /* Timer.cpp */,
+				0E3454B224A4BC5A00BD3767 /* Timer.h */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		0E3454B524A4BCBA00BD3767 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0E3454B724A4BCEA00BD3767 /* Common.cpp */,
+				0E3454B624A4BCDC00BD3767 /* Common.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0E3454B924A4BD9E00BD3767 /* Texture */ = {
+			isa = PBXGroup;
+			children = (
+				0E3454BB24A4BDCA00BD3767 /* Texture.cpp */,
+				0E3454BA24A4BDB700BD3767 /* Texture.h */,
+			);
+			path = Texture;
+			sourceTree = "<group>";
+		};
+		0E3454BD24A4BFFD00BD3767 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				0E3454C024A4C02A00BD3767 /* Controls.cpp */,
+				0E3454BF24A4C01A00BD3767 /* Controls.h */,
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +247,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3454BC24A4BDCA00BD3767 /* Texture.cpp in Sources */,
+				0E3454C124A4C02A00BD3767 /* Controls.cpp in Sources */,
+				0E3454B824A4BCEA00BD3767 /* Common.cpp in Sources */,
+				0E0DC71E24A50D0D00218FF6 /* Bar.cpp in Sources */,
+				0E3454B424A4BC6800BD3767 /* Timer.cpp in Sources */,
 				0E34549E24A4B97500BD3767 /* main.cpp in Sources */,
+				0E0DC71A24A50C1400218FF6 /* Block.cpp in Sources */,
+				0E3454B024A4BBB000BD3767 /* SDLConfig.cpp in Sources */,
+				0E0DC71624A50AC900218FF6 /* Ball.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +375,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -247,6 +387,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

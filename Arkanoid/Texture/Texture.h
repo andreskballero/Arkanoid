@@ -9,7 +9,7 @@
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
-#include "SDLConfig.h"
+#include "Common.h"
 
 #include "SDL2/SDL.h"
 #include "SDL2_image/SDL_image.h"
@@ -17,7 +17,7 @@
 
 #include <string>
 
-// Tile class - texture wrapper
+// Texture class - texture wrapper
 class Texture {
 public:
     Texture();

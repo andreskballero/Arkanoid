@@ -8,16 +8,6 @@
 
 #include "SDLConfig.h"
 
-// The window we will be rendering to
-SDL_Window *gWindow = NULL;
-
-// The window renderer
-SDL_Renderer *gRenderer = NULL;
-
-// Globally used font
-TTF_Font *gFont = NULL;
-
-
 bool init() {
     // Initialization flag
     bool success = true;
@@ -80,8 +70,64 @@ bool loadMedia() {
 }
 
 
-bool loadTextures() {
-    return true;
+bool loadTextures(Ball *ball) {
+    bool success = true;
+    
+    // Ball texture
+    if(!ball->ball.loadFromFile("../Assets/Ball.png")) {
+        printf("Could not load the ball texture.\n");
+        success = false;
+    }
+    
+    // Block textures
+    if(!blocks[BLUE].loadFromFile("../Assets/BlueBlock.png")) {
+        printf("Could not load the blue block texture.\n");
+        success = false;
+    }
+    if(!blocks[BLUE_2].loadFromFile("../Assets/Blue2Block.png")) {
+        printf("Could not load the blue_2 block texture.\n");
+        success = false;
+    }
+    if(!blocks[GREEN].loadFromFile("../Assets/GreenBlock.png")) {
+        printf("Could not load the green block texture.\n");
+        success = false;
+    }
+    if(!blocks[ORANGE].loadFromFile("../Assets/OrangeBlock.png")) {
+        printf("Could not load the orange block texture.\n");
+        success = false;
+    }
+    if(!blocks[PINK].loadFromFile("../Assets/PinkBlock.png")) {
+        printf("Could not load the pink block texture.\n");
+        success = false;
+    }
+    if(!blocks[PINK_2].loadFromFile("../Assets/Pink2Block.png")) {
+        printf("Could not load the pink_2 block texture.\n");
+        success = false;
+    }
+    if(!blocks[RED].loadFromFile("../Assets/RedBlock.png")) {
+        printf("Could not load the red block texture.\n");
+        success = false;
+    }
+    if(!blocks[YELLOW].loadFromFile("../Assets/YellowBlock.png")) {
+        printf("Could not load the yellow block texture.\n");
+        success = false;
+    }
+    
+    // Bar textures
+    if (!bars[LITTLE].loadFromFile("../Assets/LittleBar.png")) {
+        printf("Could not load the little bar texture.\n");
+        success = false;
+    }
+    if (!bars[MIDDLE].loadFromFile("../Assets/MiddleBar.png")) {
+        printf("Could not load the middle bar texture.\n");
+        success = false;
+    }
+    if (!bars[LARGE].loadFromFile("../Assets/LargeBar.png")) {
+        printf("Could not load the large bar texture.\n");
+        success = false;
+    }
+    
+    return success;
 }
 
 

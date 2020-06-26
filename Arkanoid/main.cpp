@@ -27,8 +27,11 @@ int main(int argc, const char *argv[]) {
         if (!loadMedia()) {
             printf("Failed to load media!\n");
         } else {
+            // Game ball
+            Ball ball;
+            
             // Load textures
-            if(!loadTextures()) {
+            if(!loadTextures(&ball)) {
                 printf("Failed to load textures!\n");
             } else {
                 // Game loop flag
@@ -84,6 +87,9 @@ int main(int argc, const char *argv[]) {
                     // Clear screen
                     SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
                     SDL_RenderClear(gRenderer);
+                    
+                    // Draw the ball
+                    ball.drawBall();
 
                     // Render FPS counter
                     FPSTexture.render(0, 0);
