@@ -10,6 +10,8 @@
 #include "Controls.h"
 #include "Texture.h"
 #include "Timer.h"
+#include "Ball.h"
+#include "Bar.h"
 #include "Common.h"
 
 #include "SDL2/SDL.h"
@@ -29,6 +31,9 @@ int main(int argc, const char *argv[]) {
         } else {
             // Game ball
             Ball ball;
+            
+            // Game bar
+            Bar bar;
             
             // Load textures
             if(!loadTextures(&ball)) {
@@ -60,7 +65,10 @@ int main(int argc, const char *argv[]) {
                 while (!quit) {
                     // ======= MOVE ======= //
                     // Handle the input
-                    move(&e, &quit);
+                    move(&e, &quit, &bar);
+                    
+                    // Move the bar
+                    bar.moveBar();
                     
                     // Calculate and correct FPS
                     float avgFPS = countedFrames / (gameTimer.getTicks() / 1000.f);
@@ -81,7 +89,7 @@ int main(int argc, const char *argv[]) {
                     }
                     
                     // ======= GAME LOGIC ======= //
-                    ball.bounce();
+                    ball.bounce(&bar);
                     
                     // ======= GAME DRAWING ======= //
                     // Clear screen
@@ -90,6 +98,8 @@ int main(int argc, const char *argv[]) {
                     
                     // Draw the ball
                     ball.drawBall();
+                    bar.drawBar();
+                    
 
                     // Render FPS counter
                     FPSTexture.render(0, 0);

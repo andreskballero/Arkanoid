@@ -10,6 +10,7 @@
 #define BALL_H
 
 #include "Texture.h"
+#include "Bar.h"
 
 #include "SDL2/SDL.h"
 
@@ -18,7 +19,7 @@ public:
     Ball();
     
     void drawBall();
-    void bounce();
+    void bounce(Bar *bar);
         
     Texture ball;
     

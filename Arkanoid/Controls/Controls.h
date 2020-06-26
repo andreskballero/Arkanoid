@@ -10,9 +10,10 @@
 #define CONTROLS_H
 
 #include "Common.h"
+#include "Bar.h"
 
 #include "SDL2/SDL.h"
 
-void move(SDL_Event *e, bool *quit);
+void move(SDL_Event *e, bool *quit, Bar *bar);
 
 #endif

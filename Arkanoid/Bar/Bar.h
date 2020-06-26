@@ -22,4 +22,18 @@ enum SizeBars {
 
 extern Texture bars[TOTAL_BARS];
 
+class Bar {
+public:
+    Bar();
+    
+    void drawBar();
+    void moveBar();
+    
+    Texture *currentBar;
+    
+    int pos_x;
+    int pos_y;
+    int vel;
+};
+
 #endif
