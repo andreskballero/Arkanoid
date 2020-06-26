@@ -40,14 +40,8 @@ int main(int argc, const char *argv[]) {
                 // Event handler
                 SDL_Event e;
                 
-                //Set text color as black
-                SDL_Color textColor = {0, 0, 0, 255};
-                
                 // Application timer
                 Timer gameTimer;
-                
-                // In memory text stream
-                std::stringstream timeText;
                 
                 // Start counting FPS
                 int countedFrames = 0;
@@ -56,9 +50,15 @@ int main(int argc, const char *argv[]) {
                 // Timer texture
                 Texture FPSTexture;
                 
+                // In memory text stream
+                std::stringstream timeText;
+                
+                //Set text color as black
+                SDL_Color textColor = {0, 0, 0, 255};
+                
                 // Game loop
                 while (!quit) {
-                    // MOVE
+                    // ======= MOVE ======= //
                     // Handle the input
                     move(&e, &quit);
                     
@@ -80,10 +80,10 @@ int main(int argc, const char *argv[]) {
                         printf("Unable to render FPS texture!\n");
                     }
                     
-                    // GAME LOGIC
+                    // ======= GAME LOGIC ======= //
+                    ball.bounce();
                     
-                    
-                    // GAME DRAWING
+                    // ======= GAME DRAWING ======= //
                     // Clear screen
                     SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
                     SDL_RenderClear(gRenderer);
