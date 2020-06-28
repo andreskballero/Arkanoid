@@ -10,11 +10,10 @@
 
 
 Ball::Ball() {
-    srand(time(NULL));
     pos_x = SCREEN_WIDTH / 2 - ball.getWidth() / 2;
     pos_y = SCREEN_HEIGHT / 2  - ball.getHeight() / 2;
     vel_x = 0;
-    vel_y = 5;
+    vel_y = 2;
 }
 
 
@@ -24,41 +23,56 @@ void Ball::drawBall() {
 
 
 void Ball::bounce(Bar *bar) {
+    // Ball movement
     pos_x += vel_x;
     pos_y += vel_y;
     
-    // If the ball hits the horizontal boundaries
-    if (pos_x <= 0 || pos_x + ball.getWidth() >= SCREEN_WIDTH) {
+    // Ball collision checking with the sides
+    // If the velocity_x is negative, it cannot hit the right boundary,
+    // therefore only the left side is checked, OR
+    // If the velocity_x is positive, it cannot hit the left boundary,
+    // therefore only the right side is checked
+    if ((vel_x < 0 && pos_x <= 0) || (vel_x > 0 && pos_x + ball.getWidth() >= SCREEN_WIDTH)) {
         vel_x = vel_x * -1;
     }
     
-    // If the ball hits the vertical boundaries
-    if (pos_y <= 0 || pos_y + ball.getHeight() >= SCREEN_HEIGHT) {
+    // Ball collision checking with top and bottom
+    // If the velocity_y is negative, it cannot hit the bottom boundary,
+    // therefore only the top is checked, OR
+    // If the velocity_y is positive, it cannot hit the top boundary,
+    // therefore only the bottom is checked
+    if ((vel_y < 0 && pos_y <= 0) || (pos_y > 0 && pos_y + ball.getHeight() >= SCREEN_HEIGHT)) {
         vel_y = vel_y * -1;
     }
     
-    // If the ball hits the bar vertically
-    if ((pos_y + ball.getHeight() >= bar->pos_y) &&
-        (pos_x + ball.getWidth() >= bar->pos_x) &&
-        (pos_x <= bar->pos_x + bar->currentBar->getWidth())) {
-        // If the ball hits the mid-right segment of the bar
-        if (pos_x + ball.getWidth() / 2 > bar->pos_x + bar->currentBar->getWidth() / 2) {
-            vel_x = 5;
-        // If the ball hits the mid-left segment of the bar
-        } else if (pos_x + ball.getWidth() / 2 < bar->pos_x + bar->currentBar->getWidth() / 2) {
-            vel_x = -5;
+    // Ball collision with the bar (top, bottom and sides)
+    // The collision is only checked when the velocity_y is positive,
+    // because it is the only scenario in which the ball can hit the
+    // top or the sides of the bar
+    if (vel_y > 0 &&
+        pos_y + ball.getHeight() >= bar->pos_y &&
+        pos_y <= bar->pos_y + bar->currentBar->getHeight() &&
+        pos_x <= bar->pos_x + bar->currentBar->getWidth() &&
+        pos_x + ball.getWidth() >= bar->pos_x) {
+        // Correct the y position to prevent possible bugs; it makes the
+        // movement rough, this part needs to be improved
+        pos_y = bar->pos_y - ball.getHeight();
+        // Depending on where the ball has hit, based on a percentage of the bar,
+        // it will respond in one way or another
+        if (pos_x + ball.getWidth() / 2 - bar->pos_x >= bar->currentBar->getWidth() * 0.95f) {
+            vel_x = 10;
+            vel_y = -5;
+        } else if (pos_x + ball.getWidth() / 2 - bar->pos_x >= bar->currentBar->getWidth() * 0.7f) {
+            vel_x = 7;
+            vel_y = -7;
+        } else if (pos_x + ball.getWidth() / 2 - bar->pos_x <= bar->currentBar->getWidth() * 0.05f) {
+            vel_x = -10;
+            vel_y = -5;
+        } else if (pos_x + ball.getWidth() / 2 - bar->pos_x <= bar->currentBar->getWidth() * 0.30f) {
+            vel_x = -7;
+            vel_y = -7;
+        } else {
+            vel_y = vel_y * -1;
         }
-        vel_y = vel_y * -1;
-    }
-    
-    // If the bar hits on the sides
-    if (((pos_y > bar->pos_y) &&
-         (pos_y < bar->pos_y + bar->currentBar->getHeight()) &&
-         (pos_x == bar->pos_x + bar->currentBar->getWidth()))
-        ||
-        ((pos_y > bar->pos_y) &&
-         (pos_y < bar->pos_y + bar->currentBar->getHeight()) &&
-         (pos_x == bar->pos_x))) {
-        vel_y = vel_y * -1;
     }
 }

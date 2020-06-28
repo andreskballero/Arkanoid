@@ -24,6 +24,7 @@ void Bar::drawBar() {
 }
 
 void Bar::moveBar() {
+    //vel = 10;
     pos_x += vel;
     
     if (pos_x <= 0) {
