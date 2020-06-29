@@ -19,12 +19,11 @@ Bar::Bar() {
     vel = 0;
 }
 
-void Bar::drawBar() {
+void Bar::draw() {
     currentBar->render(pos_x, pos_y);
 }
 
-void Bar::moveBar() {
-    //vel = 10;
+void Bar::move() {
     pos_x += vel;
     
     if (pos_x <= 0) {

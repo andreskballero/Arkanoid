@@ -26,8 +26,8 @@ class Bar {
 public:
     Bar();
     
-    void drawBar();
-    void moveBar();
+    void draw();
+    void move();
     
     Texture *currentBar;
     

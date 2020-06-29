@@ -9,15 +9,18 @@
 #ifndef COMMON_H
 #define COMMON_H
 
-#define HALF_SECOND 500
+#define HORIZONTAL_BLOCK 64
+#define VERTICAL_BLOCK 32
+#define HORIZONTAL_WIDTH 11
+#define VERTICAL_HEIGHT 20
 
 #include "SDL2/SDL.h"
 #include "SDL2_ttf/SDL_ttf.h"
 
 // Screen dimension constants
 extern const float ASPECT_RATIO;
-extern const int SCREEN_HEIGHT;
 extern const float SCREEN_WIDTH;
+extern const int SCREEN_HEIGHT;
 
 // The window we will be rendering to
 extern SDL_Window *gWindow;

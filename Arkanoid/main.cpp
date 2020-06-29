@@ -61,6 +61,10 @@ int main(int argc, const char *argv[]) {
                 //Set text color as black
                 SDL_Color textColor = {0, 0, 0, 255};
                 
+                // Initialize and draw the board
+                initializeBoard();
+                loadBoard();
+                
                 // Game loop
                 while (!quit) {
                     // ======= MOVE ======= //
@@ -68,7 +72,7 @@ int main(int argc, const char *argv[]) {
                     move(&e, &quit, &bar);
                     
                     // Move the bar
-                    bar.moveBar();
+                    bar.move();
                     
                     // Calculate and correct FPS
                     float avgFPS = countedFrames / (gameTimer.getTicks() / 1000.f);
@@ -89,17 +93,25 @@ int main(int argc, const char *argv[]) {
                     }
                     
                     // ======= GAME LOGIC ======= //
-                    ball.bounce(&bar);
+                    // Ball movement
+                    ball.move();
+                    // Chek if the ball has hit a block
+                    hitBlock(&ball);
+                    // React depending on the surface the ball has hit
+                    ball.bounceScreen();
+                    ball.bounceBar(&bar);
                     
                     // ======= GAME DRAWING ======= //
                     // Clear screen
                     SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
                     SDL_RenderClear(gRenderer);
                     
+                    // Draw the bar
+                    bar.draw();
+                    // Draw the blocks
+                    drawBlocks();
                     // Draw the ball
-                    ball.drawBall();
-                    bar.drawBar();
-                    
+                    ball.draw();
 
                     // Render FPS counter
                     FPSTexture.render(0, 0);

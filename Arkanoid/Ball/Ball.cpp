@@ -8,25 +8,27 @@
 
 #include "Ball.h"
 
-
 Ball::Ball() {
     pos_x = SCREEN_WIDTH / 2 - ball.getWidth() / 2;
     pos_y = SCREEN_HEIGHT / 2  - ball.getHeight() / 2;
     vel_x = 0;
-    vel_y = 2;
+    vel_y = 5;
 }
 
 
-void Ball::drawBall() {
+void Ball::draw() {
     ball.render(pos_x, pos_y);
 }
 
 
-void Ball::bounce(Bar *bar) {
+void Ball::move() {
     // Ball movement
     pos_x += vel_x;
     pos_y += vel_y;
-    
+}
+
+
+void Ball::bounceScreen() {
     // Ball collision checking with the sides
     // If the velocity_x is negative, it cannot hit the right boundary,
     // therefore only the left side is checked, OR
@@ -44,7 +46,10 @@ void Ball::bounce(Bar *bar) {
     if ((vel_y < 0 && pos_y <= 0) || (pos_y > 0 && pos_y + ball.getHeight() >= SCREEN_HEIGHT)) {
         vel_y = vel_y * -1;
     }
-    
+}
+
+
+void Ball::bounceBar(Bar *bar) {
     // Ball collision with the bar (top, bottom and sides)
     // The collision is only checked when the velocity_y is positive,
     // because it is the only scenario in which the ball can hit the
@@ -65,6 +70,9 @@ void Ball::bounce(Bar *bar) {
         } else if (pos_x + ball.getWidth() / 2 - bar->pos_x >= bar->currentBar->getWidth() * 0.7f) {
             vel_x = 7;
             vel_y = -7;
+        } else if (pos_x + ball.getWidth() / 2 - bar->pos_x >= bar->currentBar->getWidth() * 0.5f) {
+            vel_x = 2;
+            vel_y = -9;
         } else if (pos_x + ball.getWidth() / 2 - bar->pos_x <= bar->currentBar->getWidth() * 0.05f) {
             vel_x = -10;
             vel_y = -5;
@@ -72,7 +80,8 @@ void Ball::bounce(Bar *bar) {
             vel_x = -7;
             vel_y = -7;
         } else {
-            vel_y = vel_y * -1;
+            vel_x = -2;
+            vel_y = -9;
         }
     }
 }

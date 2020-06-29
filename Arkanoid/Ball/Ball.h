@@ -18,12 +18,12 @@ class Ball {
 public:
     Ball();
     
-    void drawBall();
-    void bounce(Bar *bar);
+    void draw();
+    void move();
+    void bounceScreen();
+    void bounceBar(Bar *bar);
         
     Texture ball;
-    
-private:
     int pos_x;
     int pos_y;
     int vel_x;
