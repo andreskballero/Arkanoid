@@ -11,7 +11,7 @@
 
 #define NUM_BLOCKS_Y 8
 #define NUM_BLOCKS_X 9
-#define MARGIN 3
+#define MARGIN 4
 
 #include "Texture.h"
 #include "Ball.h"
@@ -46,7 +46,7 @@ void loadBoard();
 // Function to draw the block of blocks
 void drawBlocks();
 
-// Block collider
-bool hitBlock(Ball *ball);
+// Hit block checker
+void hitBlock(Ball *ball);
 
 #endif

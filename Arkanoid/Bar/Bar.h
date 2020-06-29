@@ -10,6 +10,7 @@
 #define BAR_H
 
 #include "Texture.h"
+#include "Ball.h"
 
 #include "SDL2/SDL.h"
 
@@ -28,6 +29,7 @@ public:
     
     void draw();
     void move();
+    void bounceBar(Ball *ball);
     
     Texture *currentBar;
     

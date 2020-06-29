@@ -95,11 +95,12 @@ int main(int argc, const char *argv[]) {
                     // ======= GAME LOGIC ======= //
                     // Ball movement
                     ball.move();
-                    // Chek if the ball has hit a block
+                    // Check if the ball has hit a block
+                    // If it hits a block, bounce accordingly
                     hitBlock(&ball);
                     // React depending on the surface the ball has hit
                     ball.bounceScreen();
-                    ball.bounceBar(&bar);
+                    bar.bounceBar(&ball);
                     
                     // ======= GAME DRAWING ======= //
                     // Clear screen
