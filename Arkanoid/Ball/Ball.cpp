@@ -47,7 +47,25 @@ void Ball::bounceScreen() {
     // therefore only the top is checked, OR
     // If the velocity_y is positive, it cannot hit the top boundary,
     // therefore only the bottom is checked
-    if ((vel_y < 0 && pos_y - ball.getHeight() / 2 <= 0) || (vel_y > 0 && pos_y + ball.getHeight() / 2 >= SCREEN_HEIGHT)) {
+    if (vel_y < 0 && pos_y - ball.getHeight() / 2 <= 0) {
         vel_y = vel_y * -1;
     }
+}
+
+
+void Ball::reset() {
+    pos_x = SCREEN_WIDTH / 2 - ball.getWidth() / 2;
+    last_x = 0;
+    pos_y = SCREEN_HEIGHT / 2  - ball.getHeight() / 2;
+    last_y = 0;
+    vel_x = 0;
+    vel_y = 5;
+}
+
+
+bool Ball::lose() {
+    if (pos_y - ball.getHeight() / 2 >= SCREEN_HEIGHT) {
+        return true;
+    }
+    return false;
 }

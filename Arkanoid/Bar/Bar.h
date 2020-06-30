@@ -30,6 +30,7 @@ public:
     void draw();
     void move();
     void bounceBar(Ball *ball);
+    void reset();
     
     Texture *currentBar;
     

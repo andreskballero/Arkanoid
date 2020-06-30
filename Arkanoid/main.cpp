@@ -101,6 +101,11 @@ int main(int argc, const char *argv[]) {
                     // React depending on the surface the ball has hit
                     ball.bounceScreen();
                     bar.bounceBar(&ball);
+                    // Reset everything when the match is won or lost
+                    if (win() || ball.lose()) {
+                        ball.reset();
+                        loadBoard();
+                    }
                     
                     // ======= GAME DRAWING ======= //
                     // Clear screen

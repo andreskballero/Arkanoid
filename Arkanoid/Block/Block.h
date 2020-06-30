@@ -49,4 +49,7 @@ void drawBlocks();
 // Hit block checker
 void hitBlock(Ball *ball);
 
+// Condition to win
+bool win();
+
 #endif

@@ -20,6 +20,8 @@ public:
     void draw();
     void move();
     void bounceScreen();
+    void reset();
+    bool lose();
         
     Texture ball;
     int pos_x;

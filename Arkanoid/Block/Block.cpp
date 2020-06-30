@@ -86,3 +86,16 @@ void hitBlock(Ball *ball) {
         }
     }
 }
+
+
+bool win() {
+    // Run the board, and if any block is found, return false
+    for (int y = 0; y < NUM_BLOCKS_Y; ++y) {
+        for (int x = 0; x < NUM_BLOCKS_X; ++x) {
+            if (board[y][x] != -1) {
+                return false;
+            }
+        }
+    }
+    return true;
+}

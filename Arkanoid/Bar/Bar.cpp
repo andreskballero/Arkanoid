@@ -70,3 +70,12 @@ void Bar::bounceBar(Ball *ball) {
         }
     }
 }
+
+
+void Bar::reset() {
+    currentBar = &bars[MIDDLE];
+    
+    pos_x = SCREEN_WIDTH / 2 - currentBar->getWidth() / 2;
+    pos_y = SCREEN_HEIGHT - SCREEN_HEIGHT / 10;
+    vel = 0;
+}
